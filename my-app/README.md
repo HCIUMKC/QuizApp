@@ -38,7 +38,9 @@ This should render the app on port 3000
 
 If the backend fails to load and mentions permissions, there may be a windows setting you need to change.
 
+### Testing API features
 
+I suggest something like Postman where the url would be the https://localhost:5000/insertendpointhere
 
 
 
