@@ -27,12 +27,12 @@ It correctly bundles React in production mode and optimizes the build for the be
 The build is minified and the filenames include the hashes.\
 Your app is ready to be deployed!
 
-##To run the backend
+### To run the backend
 
 Move to the folder the server.js file is in, run: nodemon server
 This should start the server on port 5000
 
-##For the front end/react app
+### For the front end/react app
 Move to the folder app.js is located, run: npm start
 This should render the app on port 3000
 
