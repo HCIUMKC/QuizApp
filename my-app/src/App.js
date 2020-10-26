@@ -1,6 +1,4 @@
-import logo from './logo.svg';
 import {BrowserRouter as Router, Route } from 'react-router-dom';
-import QuizAnswers from './QuizAnswers';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Navbar from './components/Navbar';
 import CreateUser from './components/CreateUser';
