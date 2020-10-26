@@ -27,6 +27,11 @@ It correctly bundles React in production mode and optimizes the build for the be
 The build is minified and the filenames include the hashes.\
 Your app is ready to be deployed!
 
+### To get the Node Modules.
+The app won't work without the referenced libraries. This repo does not include the node modules, to obtain them: 
+  Run npm install nameofmodule
+  where the names of modules can be found in package.json, to install multiple at once seperate nameofmodule with white space.
+
 ### To run the backend
 
 Move to the folder the server.js file is in, run: nodemon server
