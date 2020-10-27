@@ -6,7 +6,8 @@ const QuestionSchema = mongoose.Schema( {
         required: true,
         unique: true
     },
-    answers: [String]
+    answers: [String],
+    correctanswers: [String]
 
 });
 

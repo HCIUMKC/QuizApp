@@ -10,6 +10,7 @@ export default class CreateQuiz extends Component {
         this.onChangeAnswers2 = this.onChangeAnswers2.bind(this);
         this.onChangeAnswers3 = this.onChangeAnswers3.bind(this);
         this.onChangeAnswers4 = this.onChangeAnswers4.bind(this);
+        this.handleCheckBox = this.handleCheckBox.bind(this);
         this.onSubmit = this.onSubmit.bind(this);
 
         this.state = {
@@ -18,7 +19,12 @@ export default class CreateQuiz extends Component {
             answer2: '',
             answer3: '',
             answer4: '',
-            users: []
+            users: [],
+            correctAnswer: '',
+            checkboxOneChecked: false,
+            checkboxTwoChecked: false,
+            checkboxThreeChecked: false,
+            checkboxFourChecked: false
         }
     }
 
@@ -60,14 +66,67 @@ export default class CreateQuiz extends Component {
         });
     }
 
+    handleCheckBox(x, e) {
+        if (x==="1")
+        {
+            this.setState({ checkboxOneChecked: e.target.checked });
+        }
+        if (x==="2")
+        {
+            this.setState({ checkboxTwoChecked: e.target.checked });
+        }
+        if (x==="3")
+        {
+            this.setState({ checkboxThreeChecked: e.target.checked });
+        }
+        if (x==="4")
+        {
+            this.setState({ checkboxFourChecked: e.target.checked });
+        }
+        
+        
+       
+       
+    }
+
     onSubmit(e) {
         e.preventDefault();
+        const checkBoxess = {
+            one: this.state.checkboxOneChecked,
+            two: this.state.checkboxTwoChecked,
+            three: this.state.checkboxThreeChecked,
+            four: this.state.checkboxFourChecked
+        }
+        console.log(checkBoxess);
+        
+        let tempArray = []
+
+        if (checkBoxess.one === true)
+        {
+            tempArray[0] =this.state.answer1;
+        }
+        if (checkBoxess.two === true) 
+        {
+            tempArray[1] =this.state.answer2;
+        }
+        if (checkBoxess.three === true)
+        {
+            tempArray[2] = this.state.answer3;
+
+        }
+        if (checkBoxess.four === true)
+        {
+            tempArray[3] = this.state.answer4
+        }
 
         const qna = {
             question: this.state.question,
-            answers: [this.state.answer1,this.state.answer2,this.state.answer3,this.state.answer4]
+            answers: [this.state.answer1,this.state.answer2,this.state.answer3,this.state.answer4],
+            correctanswers: tempArray
         }
         console.log(qna);
+       console.log(tempArray);
+      
 
         axios.post('http://localhost:5000/qna/add', qna)
         .then(res => console.log(res.data));
@@ -79,7 +138,7 @@ export default class CreateQuiz extends Component {
         return (
             <div>
       <h3>Quiz</h3>
-      <form onSubmit={this.onSubmit}>
+      <form onSubmit={this.onSubmit} style={{display: 'flex', 'flexWrap': 'wrap'}}>
         <div className="form-group"> 
           <label>Username: </label>
           <select ref="userInput"
@@ -97,8 +156,9 @@ export default class CreateQuiz extends Component {
               }
           </select>
         </div>
-        <div className="form-group"> 
-          <label>Question: </label>
+        
+        <div className="form-group" style={{display: 'inline-flex', flexDirection: 'row', width: '100%'}}> 
+        <label style={{width: '25%'}}> <h2>Question</h2> </label>
           <input  type="text"
               required
               className="form-control"
@@ -106,38 +166,66 @@ export default class CreateQuiz extends Component {
               onChange={this.onChangeQuestion}
               />
         </div>
-        <div className="form-group">
-          <label>Answer</label>
+        <div>
+            <h2>Answers</h2>
+        </div>
+        <div className="form-group" style={{display: 'inline-flex', flexDirection: 'row', width: '100%'}}>
           <input 
               type="text" 
               className="form-control"
               value={this.state.answers}
               onChange={this.onChangeAnswers1}
               />
+           <input
+                type="Checkbox"
+                classname="form-control"
+                checked={this.state.checkboxChecked}
+                onChange={(e) => this.handleCheckBox("1", e)}
+           />
+
+              
         </div>
-        <div className="form-group">
+        <div className="form-group" style={{display: 'inline-flex', flexDirection: 'row', width: '100%'}}>
           <input 
               type="text" 
               className="form-control"
               value={this.state.answers}
               onChange={this.onChangeAnswers2}
               />
+           <input
+                type="Checkbox"
+                classname="form-control"
+                checked={this.state.checkboxChecked}
+                onChange={(e) => this.handleCheckBox("2", e)}
+           />
         </div>
-        <div className="form-group">
+        <div className="form-group" style={{display: 'inline-flex', flexDirection: 'row', width: '100%'}}>
           <input 
               type="text" 
               className="form-control"
               value={this.state.answers}
               onChange={this.onChangeAnswers3}
               />
+          <input
+              type="Checkbox"
+                classname="form-control"
+                checked={this.state.checkboxChecked}
+                onChange={(e) => this.handleCheckBox("3", e)}
+           />
         </div>
-        <div className="form-group">
+        <div className="form-group" style={{display: 'inline-flex', flexDirection: 'row', width: '100%'}}>
           <input 
               type="text" 
               className="form-control"
               value={this.state.answers}
               onChange={this.onChangeAnswers4}
               />
+                        <input
+              type="Checkbox"
+                classname="form-control"
+                checked={this.state.checkboxChecked}
+                onChange={(e) => this.handleCheckBox("4", e)}
+           />
         </div>
 
         <div className="form-group">

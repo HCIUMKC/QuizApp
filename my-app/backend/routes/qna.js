@@ -12,6 +12,7 @@ router.route('/').get((req, res) => {
     .catch(err => res.status(400).json('Error: ' + err));
 });
 
+//Send request to //localhost:5000/qna/id example: localhost:5000/qna/5f968ffad7acee393ca7c42a
 router.route('/:id').get((req, res) => {
     Qna.findById(req.params.id)
     .then(qna => res.json(qna))
@@ -21,7 +22,8 @@ router.route('/:id').get((req, res) => {
 router.route('/add').post((req, res) => {
     const qna = new Qna( {
         question: req.body.question,
-        answers: req.body.answers
+        answers: req.body.answers,
+        correctanswers: req.body.correctanswers
     });
 
     qna.save()
