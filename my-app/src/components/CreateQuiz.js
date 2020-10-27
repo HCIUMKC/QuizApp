@@ -103,20 +103,20 @@ export default class CreateQuiz extends Component {
 
         if (checkBoxess.one === true)
         {
-            tempArray[0] =this.state.answer1;
+            tempArray.push(this.state.answer1);
         }
         if (checkBoxess.two === true) 
         {
-            tempArray[1] =this.state.answer2;
+            tempArray.push(this.state.answer2);
         }
         if (checkBoxess.three === true)
         {
-            tempArray[2] = this.state.answer3;
+            tempArray.push(this.state.answer3);
 
         }
         if (checkBoxess.four === true)
         {
-            tempArray[3] = this.state.answer4
+            tempArray.push(this.state.answer4);
         }
 
         const qna = {
@@ -131,7 +131,7 @@ export default class CreateQuiz extends Component {
         axios.post('http://localhost:5000/qna/add', qna)
         .then(res => console.log(res.data));
 
-        //window.location = '/';
+        window.location = '/';
     }
 
     render() {
@@ -178,7 +178,7 @@ export default class CreateQuiz extends Component {
               />
            <input
                 type="Checkbox"
-                classname="form-control"
+                className="form-control"
                 checked={this.state.checkboxChecked}
                 onChange={(e) => this.handleCheckBox("1", e)}
            />
@@ -194,7 +194,7 @@ export default class CreateQuiz extends Component {
               />
            <input
                 type="Checkbox"
-                classname="form-control"
+                className="form-control"
                 checked={this.state.checkboxChecked}
                 onChange={(e) => this.handleCheckBox("2", e)}
            />
@@ -208,7 +208,7 @@ export default class CreateQuiz extends Component {
               />
           <input
               type="Checkbox"
-                classname="form-control"
+                className="form-control"
                 checked={this.state.checkboxChecked}
                 onChange={(e) => this.handleCheckBox("3", e)}
            />
@@ -222,7 +222,7 @@ export default class CreateQuiz extends Component {
               />
                         <input
               type="Checkbox"
-                classname="form-control"
+                className="form-control"
                 checked={this.state.checkboxChecked}
                 onChange={(e) => this.handleCheckBox("4", e)}
            />
