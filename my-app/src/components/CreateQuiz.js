@@ -83,10 +83,7 @@ export default class CreateQuiz extends Component {
         {
             this.setState({ checkboxFourChecked: e.target.checked });
         }
-        
-        
-       
-       
+     
     }
 
     onSubmit(e) {
@@ -156,9 +153,13 @@ export default class CreateQuiz extends Component {
               }
           </select>
         </div>
-        
         <div className="form-group" style={{display: 'inline-flex', flexDirection: 'row', width: '100%'}}> 
-        <label style={{width: '25%'}}> <h2>Question</h2> </label>
+        <h2>Question</h2>
+        </div>
+        <div className="form-group" style={{display: 'inline-flex', flexDirection: 'row', width: '100%'}}> 
+        
+    
+              
           <input  type="text"
               required
               className="form-control"
