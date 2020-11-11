@@ -1,3 +1,7 @@
+Purpose: 
+
+To allow multiple users to simultaneously contribute to an online quiz/test/study guide with questions and answers.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
