@@ -4,7 +4,7 @@ import Navbar from './components/Navbar';
 import CreateUser from './components/CreateUser';
 import Quiz from './components/Quiz';
 import CreateQuiz from './components/CreateQuiz';
-
+import userInfo from './components/userInfo/userInfo';
 
 function App() {
   return (
@@ -14,7 +14,8 @@ function App() {
         <br/>
         <Route path="/" exact component={Quiz} />
         <Route path="/create" component={CreateQuiz} />
-        <Route path="/user" component={CreateUser} />
+              <Route path="/user" component={CreateUser} />
+              <Route path="/userInfo" component={userInfo} />
     </div>
     </Router>
   );
