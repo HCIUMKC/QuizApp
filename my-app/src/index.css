@@ -11,3 +11,29 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+#name {
+    font-size: large;
+    font-weight: bold;
+}
+
+#dev {
+    font-size: larger;
+    font-weight: bolder;
+    display: inline-block;
+    
+}
+#email{
+    font-size: medium;
+    font-weight: normal;
+}
+#table {
+    text-align: center;
+   
+}
+ul {
+    list-style-type: none;
+}
+#header{
+    font-weight: bolder;
+}

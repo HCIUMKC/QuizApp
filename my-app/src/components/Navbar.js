@@ -19,7 +19,7 @@ export default class Navbar extends Component {
                         <Link to="/user" className="nav-link"> Create User</Link>    
                         </li>
                         <li className="navbar-item">
-                            <Link to="/userInfo" className="nav-link"> User Info</Link>
+                            <Link to="/devInfo" className="nav-link"> Developers</Link>
                         </li>
                     </ul>
                 </div>

@@ -15,7 +15,7 @@ function App() {
         <Route path="/" exact component={Quiz} />
         <Route path="/create" component={CreateQuiz} />
               <Route path="/user" component={CreateUser} />
-              <Route path="/userInfo" component={userInfo} />
+              <Route path="/devInfo" component={userInfo} />
     </div>
     </Router>
   );

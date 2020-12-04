@@ -2,36 +2,43 @@ import React from "react";
 
 const userInfo = () => {
     return (<div>
-        <ul>
-        <li>
-                Developers:
+        <h1 id="header">Developers</h1>
+        <ul id="table">
+            <li id="dev">
+                
+                <li>&nbsp;</li>
                 <ul>
-                   <li> Judge Greenberger </li>
+                    <li id="name"> Judge Greenberger </li>
                     <ul>
-                    <li> Email: jaggcw@umsystem.edu </li>
+                        <li id="email"> Email: jaggcw@umsystem.edu </li>
                     </ul> 
-                </ul> 
+                </ul>
+                <li>&nbsp;</li>
                 <ul>
-                    <li> Reed Bader </li>
+                    <li id="name"> Reed Bader </li>
                     <ul>
-                        <li> Email: jaggcw@umsystem.edu </li>
+                        <li id="email"> Email: rmbdgdf@umsystem.edu </li>
                     </ul>
                 </ul> 
+                <li>&nbsp;</li>
                 <ul>
-                    <li> Jacob Gleinser </li>
+                    <li id="name"> Jacob Gleinser </li>
                     <ul>
-                        <li> Email: jaggcw@umsystem.edu </li>
+                        <li id="email"> Email: jagvz8@umsystem.edu </li>
                     </ul>
-                </ul> 
+                </ul>
+                <li>&nbsp;</li>
                 <ul>
-                    <li> Greg Robson </li>
+                    <li id="name"> Greg Robson </li>
                     <ul>
-                        <li> Email: jaggcw@umsystem.edu </li>
+                        <li id="email"> Email: jaggcw@umsystem.edu </li>
                     </ul>
                 </ul> 
         </li>
         </ul>
-        </div>);
-};
+        
+    </div>
+        );
+            };
 
-export default userInfo;
+            export default userInfo;
