@@ -24,14 +24,14 @@ const userInfo = () => {
                 <ul>
                     <li id="name"> Jacob Gleinser </li>
                     <ul>
-                        <li id="email"> Email: jagvz8@umsystem.edu </li>
+                        <li id="email"> Email: jagvz8--@umsystem.edu </li>
                     </ul>
                 </ul>
                 <li>&nbsp;</li>
                 <ul>
                     <li id="name"> Greg Robson </li>
                     <ul>
-                        <li id="email"> Email: jaggcw@umsystem.edu </li>
+                        <li id="email"> Email: gmrgr7@umsystem.edu </li>
                     </ul>
                 </ul> 
         </li>
